@@ -149,9 +149,9 @@ http://localhost:8000/docs
 | PostgreSQL Database | 9628 | Мониторинг PostgreSQL (запросы, подключения, блокировки) |
 | Prometheus 2.0 Stats | 3662 | Мониторинг самого Prometheus |
 
-Инструкция по импорту дашбордов:
+### Инструкция по импорту дашбордов:
 Войдите в Grafana (http://localhost:3000, admin/admin)
-
+Войдите в дашборды
 Нажмите "New" → "Import"
 
 Введите ID дашборда (например, 1860 для Node Exporter)
