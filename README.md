@@ -56,3 +56,31 @@
 - **Автоматическое обнаружение** сервисов Prometheus
 - **Готовые дашборды** Grafana
 - **Экспортеры метрик** для PostgreSQL и Redis
+
+## 🏗️ Архитектура системы
+
+```mermaid
+graph TB
+    Client[Клиент / Пользователь] --> LB[Load Balancer]
+    LB --> FastAPI[FastAPI Application]
+    
+    FastAPI --> Business[Бизнес-логика]
+    Business --> Cache[(Redis Cache)]
+    Business --> DB[(PostgreSQL DB)]
+    
+    FastAPI --> Metrics[Prometheus Metrics]
+    Metrics --> Prometheus[Prometheus Server]
+    Prometheus --> Grafana[Grafana Dashboard]
+    
+    DB --> PGExporter[PostgreSQL Exporter]
+    Cache --> RedisExporter[Redis Exporter]
+    
+    PGExporter --> Prometheus
+    RedisExporter --> Prometheus
+    
+    style FastAPI fill:#009688
+    style Cache fill:#d32f2f
+    style DB fill:#336791
+    style Prometheus fill:#e6522c
+    style Grafana fill:#f46800
+```
