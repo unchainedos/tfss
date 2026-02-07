@@ -148,6 +148,7 @@ http://localhost:8000/docs
 | Redis Dashboard | 768 | Мониторинг Redis (память, подключения, команды, ключи) |
 | PostgreSQL Database | 9628 | Мониторинг PostgreSQL (запросы, подключения, блокировки) |
 | Prometheus 2.0 Stats | 3662 | Мониторинг самого Prometheus |
+
 Инструкция по импорту дашбордов:
 Войдите в Grafana (http://localhost:3000, admin/admin)
 
